@@ -10,16 +10,13 @@ async function getCategoriaById(id) {
   return rows[0];
 }
 
-async function createCategoria(name) {
-  const [result] = await mysqlPool.query(
-    'INSERT INTO categorias (nombre) VALUES (?)', [name]);
+async function createCategoria(nombre) {
+  const [result] = await mysqlPool.query('INSERT INTO categorias (nombre) VALUES (?)', [nombre]);
   return result.insertId;
 }   
 
 async function updateCategoria(id, name) {
-  await mysqlPool.query(
-    'UPDATE categorias SET nombre = ? WHERE id = ?', [id, name]
-  );
+  await mysqlPool.query('UPDATE categorias SET nombre = ? WHERE id = ?', [id, name]);
 }
 
 async function deleteCategoria(id) {

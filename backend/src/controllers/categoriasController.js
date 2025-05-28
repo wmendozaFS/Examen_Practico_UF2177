@@ -22,8 +22,8 @@ exports.getCategoriaById = async (req, res) => {
 
 exports.createCategoria = async (req, res) => {
   try {
-    const {name} = req.body;
-    const categoriaId = await categoriaModel.createCategoria(name);
+    const {nombre} = req.body;
+    const categoriaId = await categoriaModel.createCategoria(nombre);
     res.status(201).json({ message: 'Categoría creada', categoriaId });
   } catch (err) {
     res.status(500).json({ error: 'Erroooooor al crear la categoría' });
