@@ -1,10 +1,4 @@
-# Entorno
-.env
-
 # Base de datos
-*.sqlite
-*.sqlite3
-db/*.sqlite
 node_modules/
 
 # Subidas de archivos
