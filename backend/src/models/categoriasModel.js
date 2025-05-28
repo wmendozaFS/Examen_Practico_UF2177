@@ -1,4 +1,4 @@
-const mysqlPool = require('../src/db/database');
+const mysqlPool = require('../db/database');
 
 async function getAllCategorias() {
   const [rows] = await mysqlPool.query('SELECT * FROM categorias');
@@ -10,18 +10,15 @@ async function getCategoriaById(id) {
   return rows[0];
 }
 
-async function createCategoria(nombre) {
+async function createCategoria(name) {
   const [result] = await mysqlPool.query(
-    'INSERT INTO categorias (nombre) VALUES (?)',
-    [nombre]
-  );
+    'INSERT INTO categorias (nombre) VALUES (?)', [name]);
   return result.insertId;
 }   
 
-async function updateCategoria(id, nombre) {
+async function updateCategoria(id, name) {
   await mysqlPool.query(
-    'UPDATE categorias SET nombre = ? WHERE id = ?',
-    [nombre, id]
+    'UPDATE categorias SET nombre = ? WHERE id = ?', [id, name]
   );
 }
 
