@@ -1,5 +1,5 @@
 // src/controllers/categoriasController.js
-const categoriaModel = require('../src/models/categoriasModel');
+const categoriaModel = require('../models/categoriasModel');
 
 exports.getAllCategorias = async (req, res) => {
   try {

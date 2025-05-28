@@ -1,5 +1,5 @@
 // src/controllers/tareaController.js
-const tareaModel = require('../src/models/tareasModel');
+const tareaModel = require('../models/tareasModel');
 
 exports.getAllTareas = async (req, res) => {
   try {
