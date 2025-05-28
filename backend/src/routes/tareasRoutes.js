@@ -1,7 +1,7 @@
 // routes/tareasRoutes.js
 const express = require('express');
 const router = express.Router();
-const tareasController = require('../src/controllers/tareasController');
+const tareasController = require('../controllers/tareasController');
 
 // Rutas
 router.get('/', tareasController.getAllTareas);

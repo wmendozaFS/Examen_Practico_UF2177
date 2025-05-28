@@ -1,7 +1,7 @@
 // routes/categoriasRoutes.js
 const express = require('express');
 const router = express.Router();
-const categoriasController = require('../src/controllers/categoriasController');
+const categoriasController = require('../controllers/categoriasController');
 
 // Rutas
 router.get('/', categoriasController.getAllCategorias);

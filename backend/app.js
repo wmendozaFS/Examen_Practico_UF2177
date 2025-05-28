@@ -14,14 +14,14 @@ const mysqlPool = mysql.createPool({
     database: process.env.MYSQL_DATABASE,
 });
 mysqlPool.getConnection().then(connection => {
-    console.log('Connected to MySQL database');
+    console.log('Conectado a la base de datos MySQL');
     connection.release();
 }).catch(err => {
-    console.error('MySQL connection error:', err);
+    console.error('MySQL error de conexion:', err);
 });
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Consultoria Mind')
+    res.send('Bienvenidos al Gestor de Tareas')
 }
 
 );

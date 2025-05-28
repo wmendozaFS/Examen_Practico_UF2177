@@ -22,18 +22,18 @@ exports.getCategoriaById = async (req, res) => {
 
 exports.createCategoria = async (req, res) => {
   try {
-    const { name, description } = req.body;
-    const categoriaId = await categoriaModel.createCategoria(name, description);
+    const {name} = req.body;
+    const categoriaId = await categoriaModel.createCategoria(name);
     res.status(201).json({ message: 'Categoría creada', categoriaId });
   } catch (err) {
-    res.status(500).json({ error: 'Error al crear la categoría' });
+    res.status(500).json({ error: 'Erroooooor al crear la categoría' });
   }
 };
 
 exports.updateCategoria = async (req, res) => {
   try {
-    const { name, description } = req.body;
-    await categoriaModel.updateCategoria(req.params.id, name, description);
+    const {name} = req.body;
+    await categoriaModel.updateCategoria(req.params.id, name);
     res.json({ message: 'Categoría actualizada' });
   } catch (err) {
     res.status(500).json({ error: 'Error al actualizar la categoría' });

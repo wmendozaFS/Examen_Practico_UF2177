@@ -1,4 +1,4 @@
-const mysqlPool = require('../src/db/database');
+const mysqlPool = require('../db/database');
 
 async function getAllTareas() {
   const [rows] = await mysqlPool.query('SELECT * FROM tareas');
